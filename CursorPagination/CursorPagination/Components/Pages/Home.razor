@@ -1,0 +1,60 @@
+﻿@page "/"
+@using CursorPagination.Components.Shared
+@using CursorPagination.Model
+@using CursorPagination.Services
+@inject RedditService RedditService
+
+<h3>Top r/programming Posts</h3>
+
+<PaginationComponent TItem="RedditPost"
+                     Items="posts"
+                     CurrentPage="@currentPage"
+                     PageSize="@pageSize"
+                     HasMorePages="@hasMorePages"
+                     OnPageChanged="LoadPosts">
+    <childContentHeader>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Score</th>
+            <th>Posted</th>
+        </tr>
+    </childContentHeader>
+    <childContentRow Context="post">
+        <tr>
+            <td>@post.Title</td>
+            <td>@post.Author</td>
+            <td>@post.Score</td>
+            <td>@post.CreatedUtc.ToLocalTime().ToString("g")</td>
+        </tr>
+    </childContentRow>
+</PaginationComponent>
+
+@code {
+    private List<RedditPost> posts = new();
+    private readonly List<string?> cursors = new() { null };
+    private int currentPage = 1;
+    private readonly int pageSize = 10;
+    private bool hasMorePages;
+
+    protected override async Task OnInitializedAsync()
+      => await LoadPosts(1);
+
+    private async Task LoadPosts(int page)
+    {
+        var cursor = cursors.ElementAtOrDefault(page - 1);
+
+        var (items, nextCursor) = await RedditService
+          .GetTopPostsAsync("programming", pageSize, cursor);
+
+        posts = items;
+        currentPage = page;
+        hasMorePages = nextCursor != null;
+
+        if (nextCursor is not null
+            && cursors.Count <= page)
+        {
+            cursors.Add(nextCursor);
+        }
+    }
+}

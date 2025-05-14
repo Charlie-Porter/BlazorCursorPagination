@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursorPagination", "CursorPagination\CursorPagination\CursorPagination.csproj", "{0E0607D1-3C01-4188-A44C-EBA19EDD9CC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursorPagination.Client", "CursorPagination\CursorPagination.Client\CursorPagination.Client.csproj", "{6A57DBF6-FC5A-4CA8-99EF-CC0E7A958890}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E0607D1-3C01-4188-A44C-EBA19EDD9CC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E0607D1-3C01-4188-A44C-EBA19EDD9CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E0607D1-3C01-4188-A44C-EBA19EDD9CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E0607D1-3C01-4188-A44C-EBA19EDD9CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A57DBF6-FC5A-4CA8-99EF-CC0E7A958890}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A57DBF6-FC5A-4CA8-99EF-CC0E7A958890}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A57DBF6-FC5A-4CA8-99EF-CC0E7A958890}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A57DBF6-FC5A-4CA8-99EF-CC0E7A958890}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {359C2C14-7212-432B-B045-14F7978036F2}
+	EndGlobalSection
+EndGlobal
